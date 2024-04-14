@@ -1,0 +1,28 @@
+openapi: "3.0.0"
+
+info:
+  title: Simple API overview
+  version: 2.0.0
+
+paths:
+  /:
+    get:
+      operationId: listVersions
+      summary: List API versions
+      responses:
+        200:
+          description: List of API versions
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/VersionList"
+
+components:
+  schemas:
+    VersionList:
+      type: array
+      description: List of API versions
+      items:
+        minimum: 1
+        type: integer
+      example: [ 1, 2, 3 ]

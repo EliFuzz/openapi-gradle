@@ -1,2 +1,14 @@
-# openapi-gradle
-Wraps OpenAPI Generator to craft server and client classes separately in one go. Packaged into a convenient JAR and ready for deployment to Maven. Best for distributed microservice systems
+# OpenAPI Gradle Wrapper
+
+## Usage
+
+1. In `build.gradle.kts` file replace the path to OpenAPI specification file `contractInputSpec`
+2. Publish to maven repo
+
+```shell
+./gradlew publishToMavenLocal
+```
+
+3. The packages will be created
+    - client - group: `com.genten.contract` artifactId: `client`
+    - server - group: `com.genten.contract` artifactId: `server` 
